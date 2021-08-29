@@ -4,3 +4,9 @@
     justify-content: $jc;
     align-items: $ai;
 }
+
+@mixin opacity_text($border-width, $border-color){
+    color: transparent;
+                -webkit-text-stroke-width: $border-width;
+                -webkit-text-stroke-color: $border-color;
+}

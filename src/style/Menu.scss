@@ -1,0 +1,11 @@
+@import './mixins.scss';
+@import './variables.scss';
+
+
+nav {
+    display: flex;
+    background-color: $opacity-dark;  
+    padding: 1em;
+  
+   
+  }

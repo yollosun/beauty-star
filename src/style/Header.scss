@@ -1,3 +1,45 @@
+@import './mixins.scss';
+@import './variables.scss';
 header{
-    position: fixed
+    width: 97vw;
+    position: fixed;
+    padding: 1em;
+
+    @include flex(space-between);
+
+    .logo{
+        @include opacity_text(0.7px, rgb(255, 255, 255));
+        
+
+        &:hover{
+            @include opacity_text(1.5px, rgb(255, 255, 255));
+        }
+    };
+
+    .header-button{
+        width: 10%;
+        @include flex(flex-end)
+
+    }
+
+
+
+    
+    
 }
+
+.log-button{
+    background-color: transparent;
+    border-radius: 15%;
+    padding: 10px 15px
+    
+}
+
+.login-user{
+    @include flex(space-between, center, row);
+    width: 100%;
+}
+a{
+    list-style: none;
+}
+    
