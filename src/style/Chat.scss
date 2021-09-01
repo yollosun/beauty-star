@@ -1,0 +1,122 @@
+@import './mixins.scss';
+@import './variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+.chat{
+    height: 100vh;
+    background: linear-gradient(35deg, #CCFFFF, #FFCCCC);
+    display: flex;
+
+    &-container{
+        width: 100%;
+        @include flex(center, center, column)
+    }
+    
+
+    &-window{
+        
+        background: url('../media/chat.png') no-repeat ;
+        background-position: 3%;
+        height: 68vh;
+        width: 70%;
+        margin: 0 auto;
+        border: 5px solid #140302;
+        overflow-y: auto;
+        background-color: #ECD6D7;
+        /* width */
+        &::-webkit-scrollbar {
+                width: 8px;
+         }
+             /* Track */
+        &::-webkit-scrollbar-track {
+            background: #ECD6D7;
+         }
+                /* Handle */
+        &::-webkit-scrollbar-thumb {
+             background: rgba(46, 27, 40, 0.76);
+            }
+            /* Handle on hover */
+        &::-webkit-scrollbar-thumb:hover {
+             background: rgb(73, 29, 29);
+             }
+    }
+
+    &-utils{
+        @include flex(flex-start, center)
+    }
+
+    &-message{
+        margin: 10px;
+        width: fit-content;
+        padding: 1% ;
+        padding-right: 4%;
+        border:  0.5px solid black ;
+        border-radius: 6%;
+        background-color: rgba(156, 129, 129, 0.2);
+        color: rgb(8, 2, 2);
+
+        &-text{
+            font-family: 'Lobster', cursive;
+        }
+    }
+
+    &-input{
+        @include flex(center, flex-end, column);
+        width:70%;
+
+
+        input{
+            width: 98%;
+            height: 7vh;
+            margin: 3px auto;
+            background-color: transparent;
+            font-family: 'Lobster', cursive;
+            border: 5px solid #140302;
+            font-size: large;
+        }
+
+        button{
+            padding: 1%;
+            border-radius: 12%;
+            border: 2px solid black;
+            background-color: transparent;
+
+            &:hover{
+                box-shadow: 1px 1px 10px white;
+                
+
+            }
+        }
+    }
+}
+
+
+.img-root{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    font-size: 1.25rem;
+    align-items: center;
+    flex-shrink: 0;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    line-height: 1;
+    user-select: none;
+    border-radius: 50%;
+    justify-content: center;
+    margin-right: 5px;
+    
+
+    .img{
+        color: transparent;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            text-align: center;
+            text-indent: 10000px;
+            
+            
+    }
+
+}

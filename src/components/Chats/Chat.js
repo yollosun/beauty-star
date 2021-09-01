@@ -2,10 +2,11 @@ import React from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { useContext, useState } from 'react'
 import { Context } from '../../index'
-import { Avatar, Button, Container, Grid, TextField, useTheme } from '@material-ui/core'
+import { TextField } from '@material-ui/core'
 import { useCollectionData } from 'react-firebase-hooks/firestore'
 import Loader from '../Loader'
 import firebase from 'firebase'
+import '../../style/Chat.scss'
 function Chat() {
     const { auth, firestore } = useContext(Context)
     const [user] = useAuthState(auth)
@@ -29,44 +30,35 @@ function Chat() {
         return <Loader />
     }
     return (
-        <Container>
-            <Grid container
-                justify={" center"}
-                style={{ height: window.innerHeight - 50, marginTop: 20 }}>
-                <div style={{ width: "88%", height: "68vh", border: '1px solid gray', overflowY: "auto" }}>
-                    {console.log(messages)}
+        <div className='chat'>
+            <div className='chat-container'>
+                <div className='chat-window' >
                     {messages.map(message =>
-                        <div style={{
-                            width: "30%",
-                            margin: 10,
-                            border: user.uid === message.uid ? '2px solid green' : '2px solid red',
+                        <div className='chat-message' style={{
+
+
                             marginLeft: user.uid === message.uid ? 'auto' : '10px',
-                            wigth: 'fit-content',
-                            padding: 5
+
                         }}>
-                            <Grid container>
-                                <Avatar src={message.photoURL} />
+                            <div className='chat-utils'>
+                                <div className='img-root'>
+                                    <img className='img' src={message.photoURL} />
+                                </div>
                                 <div>{message.displayName}</div>
-                            </Grid>
-                            <div>{message.text}</div>
+                            </div>
+                            <hr />
+
+                            <div className='chat-message-text'>{message.text}</div>
                         </div>
                     )}
                 </div>
-                <Grid
-                    container
-                    direction={"column"}
-                    alignItems={"flex-end"}
-                    style={{ width: '88%' }}>
-                    <TextField
-                        fullWidth
-                        rowsMax={2}
-                        variant={"outlined"}
-                        value={value}
+                <div className='chat-input'>
+                    <input value={value}
                         onChange={e => setValue(e.target.value)} />
-                    <Button onClick={sendMessage} variant={"outlined"}>Отправить</Button>
-                </Grid>
-            </Grid>
-        </Container>
+                    <button onClick={sendMessage} >Отправить</button>
+                </div>
+            </div>
+        </div>
     )
 }
 

@@ -1,7 +1,6 @@
-import logo from '../media/logo.png'
-import logoo from '../media/logoo.png'
+
 import '../style/Header.scss'
-import Burger from './Menu/Burger'
+
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { useContext } from 'react'
 import { Context } from '../index'

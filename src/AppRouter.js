@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, Switch, Redirect } from 'react-router-dom'
 import { privateRoutes, publicRoutes } from './routes'
-import { CHAT_ROUTE, LOGIN_ROUTE, MAIN_ROUTE } from './utils/utils'
+import { MAIN_ROUTE } from './utils/utils'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { useContext } from 'react'
 import { Context } from './index'

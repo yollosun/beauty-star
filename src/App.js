@@ -1,11 +1,8 @@
 
-// import Header from './components/Header';
-import Main from './components/Main';
-
 import './style/App.scss'
 import { BrowserRouter as Router } from 'react-router-dom'
 import AppRouter from './AppRouter';
-import Navbar from './components/Navbar';
+
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useContext } from 'react'
 import { Context } from '.';
